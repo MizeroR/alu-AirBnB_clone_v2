@@ -1,14 +1,12 @@
 #!/usr/bin/python3
 """ Module for testing file storage"""
 import unittest
-
 import models
 from models.base_model import BaseModel
 import os
 
 
-@unittest.skipIf(os.getenv('HBNB_TYPE_STORAGE') == 'db', "skip if not db")
-class TestFileStorage(unittest.TestCase):
+class test_fileStorage(unittest.TestCase):
     """ Class to test the file storage method """
 
     def setUp(self):
