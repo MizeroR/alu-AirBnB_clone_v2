@@ -13,6 +13,7 @@ class TestFileStorage(unittest.TestCase):
 
     def setUp(self):
         """ Set up test environment """
+	self.storage = models.storage
         del_list = []
         for key in storage._FileStorage__objects.keys():
             del_list.append(key)
@@ -25,6 +26,8 @@ class TestFileStorage(unittest.TestCase):
             os.remove('file.json')
         except:
             pass
+
+	del self.storage
 
     def test_obj_list_empty(self):
         """ __objects is initially empty """
