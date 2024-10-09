@@ -14,9 +14,15 @@ def index():
 
 @app.route('/hbnb', strict_slashes=False)
 def hbnb():
-    """Returns 'HBNB' """
+    """Returns "HBNB" """
     return 'HBNB'
 
 
+@app.route('/c/<text>', strict_slashes=False)
+def echo(text):
+    """Returns the string "C" followed by the value of the text variable"""
+    return "C {}".format(text.replace('_', ' '))
+
+
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port='5000')
+    app.run(host='0.0.0.0', port='5000'
