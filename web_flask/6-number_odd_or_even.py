@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """Flask"""
-from flask import Flask
+from flask import Flask, render_template
 
 
 app = Flask(__name__)
@@ -22,6 +22,7 @@ def hbnb():
 def c_text(text):
     """Returns the string "C" followed by the value of the text variable"""
     return 'C ' + text.replace('_', ' ')
+
 
 @app.route('/python/', strict_slashes=False)
 @app.route('/python/<text>', strict_slashes=False)
